@@ -225,12 +225,12 @@ public:
 		// Set up variables for distance (intervals)
 		if (opt.modelx() == MODEL_BASIC)
 			for (int i=0; i<n-1; i++)
-				d[i] =  expr(*this,chord[i+1] - chord[i],opt.icl());
+				d[i] =  expr(*this,chord[i+1] - chord[i],opt.ipl());
 		
 		else 
 			for (int i=0; i<n-1; i++)
 				for(unsigned int j = i + 1; j < n;j ++)
-					dAll[k++] = expr(*this, chord[j] - chord[i], opt.icl());
+					dAll[k++] = expr(*this, chord[j] - chord[i], opt.ipl());
 		
 		/* constraints */
 		
@@ -289,13 +289,13 @@ public:
 	}
 	
 	/// Constructor for copying \a s
-	Gechord(bool share, Gechord& s) : Script(share,s) {
-		chord.update(*this, share, s.chord);
+	Gechord(Gechord& s) : Script(s) {
+		chord.update(*this, s.chord);
 	}
 	/// Copy during cloning
 	virtual Space*
-	copy(bool share) {
-		return new Gechord(share,*this);
+	copy(void) {
+		return new Gechord(*this);
 	}
 	
 };

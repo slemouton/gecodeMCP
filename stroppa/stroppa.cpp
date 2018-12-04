@@ -253,10 +253,10 @@ public:
 		IntVarArgs dAll(n*(n-1)/2.);  // tous les intervalles entre chaque note deux à deux de l'accord-solution
 		IntVarArgs poids(n-1);  // poids pour chaque intervalle
 		IntVar cs(*this,0,100000);
-		IntArgs e_(12, 0,1,2,3,4,5,6,7,8,9,10,11);
+		IntArgs e_{12, 0,1,2,3,4,5,6,7,8,9,10,11};
 		//IntArgs w_(12, 0, 100, 75, 15, 10, 35, 40, 20, 25, 30, 70, 95);
 		//IntArgs w_(12, 0.0, 1000.0, 750.0, 150.0, 100.0, 350.0, 400.0, 200.0, 250.0, 300.0, 700.0, 950.0);
-		IntArgs w_(128, 
+		IntArgs w_{128, 
 				   0, 1000, 750, 150, 100, 350, 400, 200, 250, 300, 700, 950, 
 		 0, 850, 638, 128, 85, 298, 340, 170, 212, 255, 595, 808, 
 		 0, 700, 525, 105, 70, 245, 280, 140, 175, 210, 490, 665, 
@@ -267,18 +267,18 @@ public:
 		 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 		 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
 		 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
-		 0, 0, 0, 0, 0, 0, 0, 0);
+		 0, 0, 0, 0, 0, 0, 0, 0};
 		IntVarArray c_(*this,128,0,100); //compteur d'intervalles
 		
 		
 		// Set up variables for distance (intervals)
 		
 		for (int i=0; i<n-1; i++)
-			d[i] =  expr(*this,chord[i+1] - chord[i],opt.icl());
+			d[i] =  expr(*this,chord[i+1] - chord[i],opt.ipl());
 
 		for (int i=0; i<n-1; i++)
 			for(unsigned int j = i + 1; j < n;j ++)
-				dAll[k++] = expr(*this, chord[j] - chord[i], opt.icl());		
+				dAll[k++] = expr(*this, chord[j] - chord[i], opt.ipl());		
 		
 		surface = expr(*this,(chord[n-1] - chord[0]));
 		
@@ -313,9 +313,9 @@ public:
 		//contrainte 4 : coefficient de stabilité entre csmin et csmax
 		if (opt.csmax != 0)
 		{
-	//		count(*this, d, c_,opt.icl());
-			count(*this, dAll, c_,opt.icl());
-			linear(*this, w_, c_ , IRT_EQ, cs,ICL_DEF);
+	//		count(*this, d, c_,opt.ipl());
+			count(*this, dAll, c_,opt.ipl());
+			linear(*this, w_, c_ , IRT_EQ, cs,IPL_DEF);
 			rel(*this,cs,IRT_GQ,opt.csmin * 100. * n*(n-1)/2.);
 			rel(*this,cs,IRT_LQ,opt.csmax * 100. * n*(n-1)/2.);
 		}
@@ -340,15 +340,14 @@ public:
 	}
 	
 	/// Constructor for copying \a s
-	Stroppa(bool share, Stroppa& s) : Script(share,s) {
-		chord.update(*this, share, s.chord);
+	Stroppa(Stroppa& s) : Script(s) {
+		chord.update(*this, s.chord);
 	}
 	/// Copy during cloning
 	virtual Space*
-	copy(bool share) {
-		return new Stroppa(share,*this);
+	copy(void) {
+		return new Stroppa(*this);
 	}
-	
 };
 
 /** \brief Main-function

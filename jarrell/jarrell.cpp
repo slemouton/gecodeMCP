@@ -300,7 +300,7 @@ public:
 	}
 };
 
-class Jarrell : public MaximizeScript {
+class Jarrell : public IntMaximizeScript {
 private:
   /// The numbers
   IntVarArray x;
@@ -323,7 +323,7 @@ private:
 	
   /// Actual model
   Jarrell(const JarrellOptions& opt ) :
-  	MaximizeScript(opt),
+  	IntMaximizeScript(opt),
     x(*this, opt.size(), XMIN, XMAX),k(*this,0,50) {
 		const int n = x.size();
 	//	const int cell_n  = 3; //nombre de cellules mélodiques
@@ -343,8 +343,8 @@ private:
 		
 		// Set up variables for distance (intervals)
 		for (int i=0; i<n-1; i++)
-			//d[i] =  minus(*this,x[i+1],x[i],opt.icl());
-			d[i] =  expr(*this,x[i+1]-x[i],opt.icl());
+			//d[i] =  minus(*this,x[i+1],x[i],opt.ipl());
+			d[i] =  expr(*this,x[i+1]-x[i],opt.ipl());
 		// Set up variables for 2-length cell
 		for (int i=0; i<n-2; i++)
 			cells2[i] = expr(*this,(d[i]+100)*1000+(d[i+1]+100));		
@@ -424,22 +424,22 @@ private:
 		// contrainte 9 : Constrain them to be between -11 and 11
 		// dom(*this, d, -11, 11);
 		
-		//distinct(*this, x, opt.icl());
-		//distinct(*this, d, opt.icl());
+		//distinct(*this, x, opt.ipl());
+		//distinct(*this, d, opt.ipl());
 		
 		
 		branch(*this, x, INT_VAR_SIZE_MIN(), INT_VAL_SPLIT_MIN());
 	}
   /// Constructor for cloning \a e
-  Jarrell(bool share, Jarrell& e)
-    : MaximizeScript(share, e) {
-    x.update(*this, share, e.x);
-		k.update(*this, share, e.k);
+  Jarrell(Jarrell& e)
+    : IntMaximizeScript(e) {
+    x.update(*this, e.x);
+		k.update(*this, e.k);
   }
   /// Copy during cloning
   virtual Space*
-  copy(bool share) {
-    return new Jarrell(share, *this);
+  copy(void) {
+    return new Jarrell(*this);
   }
 
 /// Print solution
@@ -489,7 +489,7 @@ main(int argc, char* argv[]){
 	opt.size(15);
 	opt.iterations(5);
 	opt.solutions(10);
-	opt.icl(ICL_BND);
+	opt.ipl(IPL_BND);
 	opt.model(Jarrell::MODEL_ITV);
 	opt.model(Jarrell::MODEL_SIMPLE, "simple", "modele de base");
 	opt.model(Jarrell::MODEL_ITV, "redondant", "tous les intervalles du résultat appartiennent aux cellules souhaitées");
@@ -509,13 +509,13 @@ main(int argc, char* argv[]){
 	std::cout << "********************"<< std::endl;
 	switch (opt.search()){
 	case Jarrell::SEARCH_DFS:
-		MaximizeScript::run<Jarrell,DFS,JarrellOptions>(opt);break;
+		IntMaximizeScript::run<Jarrell,DFS,JarrellOptions>(opt);break;
 	case Jarrell::SEARCH_BAB:
-		MaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);break;
+		IntMaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);break;
 //	case Jarrell::SEARCH_RESTART:
-//		MaximizeScript::run<Jarrell,Restart,JarrellOptions>(opt);break;
+//		IntMaximizeScript::run<Jarrell,Restart,JarrellOptions>(opt);break;
 		case Jarrell::SEARCH_BEST:
-	//		MaximizeScript::run<Jarrell,bab,JarrellOptions>(opt);
+	//		IntMaximizeScript::run<Jarrell,bab,JarrellOptions>(opt);
 			break;
 
 
@@ -532,7 +532,7 @@ char *jarrellD(int n,char *str1,char *str2,int a,int b,char *resultat)
 		
 		opt.iterations(5);
 		opt.solutions(1);
-		opt.icl(ICL_BND);
+		opt.ipl(IPL_BND);
 		opt.model(Jarrell::MODEL_ITV);
 		opt.model(Jarrell::MODEL_SIMPLE, "simple", "modele de base");
 		opt.model(Jarrell::MODEL_ITV, "redondant", "tous les intervalles du résultat appartiennent aux cellules souhaitées");
@@ -555,7 +555,7 @@ char *jarrellD(int n,char *str1,char *str2,int a,int b,char *resultat)
 		
 		// Example::run<Jarrell,DFS,JarrellOptions>(opt);
 		// Example::run<Jarrell,BAB,SizeOptions>(opt);
-		MaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);
+		IntMaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);
 	
 		sprintf(resultat, "%s", result);
 		return result;
@@ -570,7 +570,7 @@ extern "C" {
 		
 		opt.iterations(5);
 		opt.solutions(n_solutions);
-		opt.icl(ICL_BND);
+		opt.ipl(IPL_BND);
 		opt.model(Jarrell::MODEL_ITV);
 		opt.model(Jarrell::MODEL_SIMPLE, "simple", "modele de base");
 		opt.model(Jarrell::MODEL_ITV, "redondant", "tous les intervalles du résultat appartiennent aux cellules souhaitées");
@@ -600,7 +600,7 @@ extern "C" {
 		
 		std::cerr << "can't open " << filename << std::endl;
 		// Example::run<Jarrell,DFS,JarrellOptions>(opt);
-		MaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);
+		IntMaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);
 		sprintf(resultat, "%s", result);
 		output_file.close();
 
@@ -616,7 +616,7 @@ extern "C" {
 		
 		opt.iterations(5);
 		opt.solutions(n_solutions);
-		opt.icl(ICL_BND);
+		opt.ipl(IPL_BND);
 		opt.model(model);
 		opt.model(Jarrell::MODEL_SIMPLE, "simple", "modele de base");
 		opt.model(Jarrell::MODEL_ITV, "redondant", "tous les intervalles du résultat appartiennent aux cellules souhaitées");
@@ -657,11 +657,11 @@ extern "C" {
 		
 		switch (opt.search()){
 			case Jarrell::SEARCH_DFS:
-				MaximizeScript::run<Jarrell,DFS,JarrellOptions>(opt);break;
+				IntMaximizeScript::run<Jarrell,DFS,JarrellOptions>(opt);break;
 			case Jarrell::SEARCH_BAB:
-				MaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);break;
+				IntMaximizeScript::run<Jarrell,BAB,JarrellOptions>(opt);break;
 	//		case Jarrell::SEARCH_RESTART:
-	//			MaximizeScript::run<Jarrell,Restart,JarrellOptions>(opt);break;
+	//			IntMaximizeScript::run<Jarrell,Restart,JarrellOptions>(opt);break;
 			case Jarrell::SEARCH_BEST:
 				//		MaximizeScript::run<Jarrell,bab,JarrellOptions>(opt);
 				break;

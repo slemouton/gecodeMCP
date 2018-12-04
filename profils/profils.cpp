@@ -203,13 +203,13 @@ public:
 	
 	
 	/// Constructor for copying \a s
-	Profils(bool share, Profils& s) : Script(share,s) {
-		xs.update(*this, share, s.xs);
+	Profils(Profils& s) : Script(s) {
+		xs.update(*this, s.xs);
 	}
 	/// Copy during cloning
 	virtual Space*
-	copy(bool share) {
-		return new Profils(share,*this);
+	copy(void) {
+		return new Profils(*this);
 	}
 	
 };

@@ -41,8 +41,7 @@ class AllInterval : public Script {
 private:
   /// The numbers
   IntVarArray x;
-public:
-	
+public:	
 	enum {
 		MODEL_SET,
 		MODEL_SYMMETRIC_SET, // series symetriques
@@ -51,7 +50,6 @@ public:
 		MODEL_PARALLEL_CHORD, // variante a la Carter
 		MODEL_SET_CHORD, // intersection
 		MODEL_SSET_CHORD // intersection symetrique
-
 	};
 	
   /// Actual model
@@ -70,7 +68,7 @@ public:
 		{
 			// Set up variables for distance
 			for (int i=0; i<n-1; i++)
-				d[i] = expr(*this, abs(x[i+1]-x[i]), opt.icl());
+				d[i] = expr(*this, abs(x[i+1]-x[i]), opt.ipl());
 			
 			// Constrain them to be between 1 and n-1
 			dom(*this, d, 1, n-1); 
@@ -90,7 +88,7 @@ public:
 				distinct(*this, dd, opt.icl());
 				 */
 				
-				rel(*this, abs(x[0]-x[n-1]) == 6, opt.icl());
+				rel(*this, abs(x[0]-x[n-1]) == 6, opt.ipl());
 				
 				
 			}
@@ -118,11 +116,11 @@ else
 				xx_[j] = expr(*this, x[j] % 12);
 			
 			dom(*this, xx_, 0, 11);
-			distinct(*this, xx_, opt.icl());
+			distinct(*this, xx_, opt.ipl());
 			
 			//intervalles
 			for (int i=0; i<n-1; i++)
-				d[i] =  expr(*this,x[i+1] - x[i],opt.icl());
+				d[i] =  expr(*this,x[i+1] - x[i],opt.ipl());
 			dom(*this, d, 1, n-1); 
 			
 			
@@ -152,9 +150,8 @@ else
 			}
 		}
 
-		distinct(*this, x, opt.icl());
-		distinct(*this, d, opt.icl());
-
+		distinct(*this, x, opt.ipl());
+		distinct(*this, d, opt.ipl());
 #if 0		
 		//TEST
 		IntVarArray counter(*this,12,0,250);
@@ -175,14 +172,14 @@ else
 	}
 	
   /// Constructor for cloning \a e
-  AllInterval(bool share, AllInterval& e)
-    : Script(share, e) {
-    x.update(*this, share, e.x);
+  AllInterval(AllInterval& e)
+    : Script(e) {
+    x.update(*this, e.x);
   }
   /// Copy during cloning
   virtual Space*
-  copy(bool share) {
-    return new AllInterval(share, *this);
+  copy(void) {
+    return new AllInterval(*this);
   }
   /// Print solution
   virtual void
@@ -215,7 +212,7 @@ int main(int argc, char* argv[]){
 	SizeOptions opt("AllInterval");
 	opt.size(1000);
 	opt.iterations(5);
-	opt.icl(ICL_BND);
+	opt.ipl(IPL_BND);
 	opt.model(AllInterval::MODEL_SET);
 	opt.model(AllInterval::MODEL_SET, "set", "all interval set, as defined in CSPlib, problem n.7");
 	opt.model(AllInterval::MODEL_SYMMETRIC_SET, "sset", "symmetric all-interval set");
@@ -248,7 +245,7 @@ int main(int argc, char* argv[]){
 // cf allinterval-omgg.cpp
 
 extern "C" {
-	char *allintervalG(int n,int n_solutions, char *filename,int timelimit, int model, int symmetry, int searchengine,char *resultat)
+	char *allintervalG(int n,int n_solutions, char const *filename,int timelimit, int model, int symmetry, int searchengine,char *resultat)
 	{ 
 		SizeOptions opt("AllInterval");
 		std::string chaine;
@@ -256,7 +253,7 @@ extern "C" {
 		
 		opt.iterations(5);
 		opt.solutions(n_solutions);
-		opt.icl(ICL_BND);
+		opt.ipl(IPL_BND);
 		
 		// il peut y avoir plusieurs modelisation du même problème dans un script
 		opt.model(model);
@@ -285,7 +282,7 @@ extern "C" {
 			std::cerr << "size must be at least 2!" << std::endl;
 			return NULL;
 		}		
-		strcpy(result,"nil");
+		strcpy(resultat,"nil");
 		outputstring.str("x");
 		outputstring << "(";
 		
@@ -350,7 +347,7 @@ extern "C" {
 /*to test*/
 int
 main_to_test_all_interval(int argc, char* argv[]){
-	char *a = "test-allinterval";
+	char const *a = "test-allinterval";
 		char b[200000];
 	allintervalG(12,0,a,0,2,0,0,b);
 	std::cerr << "resultat " << b << std::endl;

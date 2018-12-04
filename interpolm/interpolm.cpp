@@ -234,8 +234,8 @@ public:
 		
 		// contrainte  3 : Set up variables for intervals, 
 		for (int i=0; i<(n * (steps -2))- 1; i++)
-			//d[i] = abs(*this, Minus(*this,x[i+1+n],x[i+n],opt.icl()),opt.icl());
-			d[i] = expr (*this,abs(x[i+1+n] - x[i+n]),opt.icl());
+			//d[i] = abs(*this, Minus(*this,x[i+1+n],x[i+n],opt.ipl()),opt.ipl());
+			d[i] = expr (*this,abs(x[i+1+n] - x[i+n]),opt.ipl());
 
 		//Constrain 3a : them to be in the allowed interval list		
 		/*
@@ -262,17 +262,17 @@ public:
 	}
 	
 	/// Constructor for cloning \a s
-	InterpolM(bool share, InterpolM& s) 
-	: Script(share,s), 
+	InterpolM(InterpolM& s) 
+	: Script(s), 
 	n(s.n),
 	steps(s.steps){
-		x.update(*this, share, s.x);
+		x.update(*this, s.x);
 	}
 	
 	/// Copy during cloning
 	virtual Space*
-	copy(bool share) {
-		return new InterpolM(share,*this);
+	copy(void) {
+		return new InterpolM(*this);
 	}
 	/// Print solution
 	virtual void
@@ -395,7 +395,7 @@ extern "C" {
 	
 };
 
-int mainTOTEST(int argc, char* argv[]) //_for_testing__the_framework
+int mainToTest(int argc, char* argv[]) //_for_testing__the_framework
 {	
 	char r[10000];
 //	interpolmG("(2 2 3)","(4 5 2)","(1 2 3 4 5 6)","(0 2)",3,3,0,0,r);

@@ -267,7 +267,7 @@ public:
  
 };
 
-class VRythm : public MinimizeScript {
+class VRythm : public IntMinimizeScript {
 private:
   /// The numbers
   IntVarArray x;
@@ -279,7 +279,7 @@ public:
 	
   /// Actual model
   VRythm(const vrythmOptions& opt) :
-    MinimizeScript(opt),
+    IntMinimizeScript(opt),
     x(*this, opt.size(), 0, MAXDIVISION),
     k(*this,0,1000000)
     { 
@@ -362,7 +362,7 @@ else
         //5.ordre
         if (opt.model() != MODEL_BPF)  
             for (int i=0; i<n-1; i++)
-                rel(*this, (x[i+1] >= x[i]), opt.icl());
+                rel(*this, (x[i+1] >= x[i]), opt.ipl());
         
         //6.nombre de dureees differentes
         if (opt.nvalues() !=0)
@@ -389,9 +389,9 @@ else
             for (int i=0; i<n-1; i++)
             {
                 if(profil_neume[i] == 0)
-                    rel(*this, (x[i+1] <= x[i]), opt.icl());   
+                    rel(*this, (x[i+1] <= x[i]), opt.ipl());   
                 else
-                    rel(*this, (x[i+1] >= x[i]), opt.icl());
+                    rel(*this, (x[i+1] >= x[i]), opt.ipl());
             }
 #endif
 
@@ -406,9 +406,9 @@ else
             
 #endif     
 #if 0
-           // xsums[0] = expr(*this,  x[0],opt.icl());
+           // xsums[0] = expr(*this,  x[0],opt.ipl());
             for (int i = 0; i<n; i++)
-                //xsums[i] = expr(*this,xsums[i-1] + x[i],opt.icl());
+                //xsums[i] = expr(*this,xsums[i-1] + x[i],opt.ipl());
                 expr(*this,xsums[i] == 1);
             for (int i = 0; i<opt.beats(); i++)
                 rel(*this,profil_b[i],IRT_EQ,opt.profilb[i]);
@@ -435,15 +435,15 @@ else
 	}
 	
   /// Constructor for cloning \a e
-  VRythm(bool share, VRythm& e)
-    : MinimizeScript(share, e) {
-    x.update(*this, share, e.x);
-        k.update(*this, share, e.k);
+  VRythm(VRythm& e)
+    : IntMinimizeScript(e) {
+    x.update(*this, e.x);
+        k.update(*this, e.k);
   }
   /// Copy during cloning
   virtual Space*
-  copy(bool share) {
-    return new VRythm(share, *this);
+  copy(void) {
+    return new VRythm(*this);
   }
   /// Print solution
   virtual void
@@ -490,7 +490,7 @@ else
 int main(int argc, char* argv[]){
 	vrythmOptions opt("VRythm","( 5 4 )","()","()","()",12,12);
 	opt.iterations(5);
-	opt.icl(ICL_BND);
+	opt.ipl(IPL_BND);
 	opt.model(0);
 	opt.model(MODEL_ONE, "one", "verunelli probleme numero un");
 	opt.model(MODEL_TIES,"ties", " autorise les liaisons (2 a 2)");
@@ -524,7 +524,7 @@ int main(int argc, char* argv[]){
         opt.auto_n();	
     
     if (opt.model() == MODEL_BPF)
-        MinimizeScript::run<VRythm,BAB,vrythmOptions>(opt);
+        IntMinimizeScript::run<VRythm,BAB,vrythmOptions>(opt);
     else
         Script::run<VRythm,DFS,vrythmOptions>(opt);
     
@@ -543,7 +543,7 @@ extern "C" {
 
 		opt.iterations(5);
 		opt.solutions(n_solutions);
-		opt.icl(ICL_BND);
+		opt.ipl(IPL_BND);
         
   		
 		// il peut y avoir plusieurs modelisation du même problème dans un script
@@ -575,7 +575,7 @@ extern "C" {
 		outputstring << "(";
 		       
         if (opt.model() == MODEL_BPF)
-            MinimizeScript::run<VRythm,BAB,vrythmOptions>(opt);
+            IntMinimizeScript::run<VRythm,BAB,vrythmOptions>(opt);
         else
             Script::run<VRythm,DFS,vrythmOptions>(opt);
 		
