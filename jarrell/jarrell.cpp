@@ -481,8 +481,11 @@ private:
 
 
 
-int
-main(int argc, char* argv[]){
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_jarrell (int argc, char* argv[]){
+#endif
 	// SizeOptions opt("Jarrell");
 	JarrellOptions opt("Jarrell","((1 3)(-3 -1))","(60 61 62 63 64 65)",0,0);
 	

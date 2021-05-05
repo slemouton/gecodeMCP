@@ -303,7 +303,11 @@ public:
 /** \brief Main-function
  *  \relates Hamming
  */
-int main(int argc, char* argv[]) {
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_gechord (int argc, char* argv[]){
+#endif
   GechordOptions opt("Gechord","((1 3)(2 4))",0,0,0);
   opt.parse(argc,argv);
   Script::run<Gechord,DFS,GechordOptions>(opt);

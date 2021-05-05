@@ -487,7 +487,12 @@ else
 /** \brief Main-function
  *  \relates VRythm
  */
+#if SCRIPT
 int main(int argc, char* argv[]){
+#else
+int main_vrythm(int argc, char* argv[]){
+#endif
+
 	vrythmOptions opt("VRythm","( 5 4 )","()","()","()",12,12);
 	opt.iterations(5);
 	opt.ipl(IPL_BND);

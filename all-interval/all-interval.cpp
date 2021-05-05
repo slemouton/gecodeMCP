@@ -208,7 +208,12 @@ else
 /** \brief Main-function
  *  \relates AllInterval
  */
+#if SCRIPT
 int main(int argc, char* argv[]){
+#else
+int main_all_interval (int argc, char* argv[]){
+#endif
+
 	SizeOptions opt("AllInterval");
 	opt.size(1000);
 	opt.iterations(5);

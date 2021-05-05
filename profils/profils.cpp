@@ -217,8 +217,12 @@ public:
 /** \brief Main-function
  *  \relates Profils
  */
-int
-main(int argc, char* argv[]) {
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_profils(int argc, char* argv[]){
+#endif
+
 	ProfilsOptions opt("Profils",20,3,3,5,32,"((O 1 2 3))");
 	opt.parse(argc,argv);
 	opt.derive();

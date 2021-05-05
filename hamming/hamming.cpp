@@ -180,8 +180,12 @@ public:
 /** \brief Main-function
  *  \relates Hamming
  */
-int
-main(int argc, char* argv[]) {
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_hamming (int argc, char* argv[]){
+#endif
+
   HammingOptions opt("Hamming",20,3,32);
   opt.parse(argc,argv);
   Script::run<Hamming,DFS,HammingOptions>(opt);

@@ -1,6 +1,7 @@
 TARGET = $(shell basename $(CURDIR))
 CC = g++
-CFLAGS = -Qunused-arguments -ffinite-math-only -fno-math-errno -fno-strict-aliasing -O3 -std=c++11 -fvisibility=hidden -ggdb -pipe -Wall -Wextra -fPIC -pthread -DNDEBUG
+CFLAGS = -Qunused-arguments -ffinite-math-only -fno-math-errno -fno-strict-aliasing -O3 -std=c++11 \
+		-fvisibility=hidden -ggdb -pipe -Wall -Wextra -fPIC -pthread -DNDEBUG -DSCRIPT
 LIBS = -lgecodeflatzinc -lgecodedriver -lgecodesearch -lgecodeminimodel -lgecodeset -lgecodefloat -lgecodeint -lgecodekernel -lgecodesupport
 
 default: $(TARGET)

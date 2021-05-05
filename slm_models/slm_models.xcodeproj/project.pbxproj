@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3014753E18EC0A9100F0C804 /* hamming.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014753D18EC0A9100F0C804 /* hamming.cpp */; };
+		3014754818EC0AFD00F0C804 /* bpf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014754618EC0AFD00F0C804 /* bpf.cpp */; };
+		3014754918EC0AFD00F0C804 /* profils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014754718EC0AFD00F0C804 /* profils.cpp */; };
+		3014755A18EC0B2700F0C804 /* interpolm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014755818EC0B2700F0C804 /* interpolm.cpp */; };
+		3014755B18EC0B2700F0C804 /* interpolm.h in Headers */ = {isa = PBXBuildFile; fileRef = 3014755918EC0B2700F0C804 /* interpolm.h */; };
+		3014756418EC0B8000F0C804 /* stroppa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014756218EC0B8000F0C804 /* stroppa.cpp */; };
+		3014756518EC0B8000F0C804 /* stroppa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014756218EC0B8000F0C804 /* stroppa.cpp */; };
+		3014756618EC0B8000F0C804 /* stroppa.h in Headers */ = {isa = PBXBuildFile; fileRef = 3014756318EC0B8000F0C804 /* stroppa.h */; };
+		305C7CC518F1940F00AC0D11 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F8372818EB67170054875B /* Cocoa.framework */; };
+		305C7CCE18F1959300AC0D11 /* stroppa.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014756218EC0B8000F0C804 /* stroppa.cpp */; };
+		305C7CCF18F1959300AC0D11 /* stroppa.h in Sources */ = {isa = PBXBuildFile; fileRef = 3014756318EC0B8000F0C804 /* stroppa.h */; };
+		305C7CD018F1959300AC0D11 /* interpolm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014755818EC0B2700F0C804 /* interpolm.cpp */; };
+		305C7CD118F1959300AC0D11 /* interpolm.h in Sources */ = {isa = PBXBuildFile; fileRef = 3014755918EC0B2700F0C804 /* interpolm.h */; };
+		305C7CD218F1959300AC0D11 /* bpf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014754618EC0AFD00F0C804 /* bpf.cpp */; };
+		305C7CD318F1959300AC0D11 /* profils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014754718EC0AFD00F0C804 /* profils.cpp */; };
+		305C7CD418F1959300AC0D11 /* hamming.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3014753D18EC0A9100F0C804 /* hamming.cpp */; };
+		305C7CD718F1959300AC0D11 /* all-interval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F8375318EB67A60054875B /* all-interval.cpp */; };
+		307DECAE26433499001B3345 /* jarrell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 307DECAD26433499001B3345 /* jarrell.cpp */; };
+		307DECB0264334C2001B3345 /* gechord.h in Headers */ = {isa = PBXBuildFile; fileRef = 307DECAF264334C2001B3345 /* gechord.h */; };
+		307DECB2264334CA001B3345 /* gechord.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 307DECB1264334CA001B3345 /* gechord.cpp */; };
+		30A83B432641EA90002642C6 /* chsort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30A83B422641EA90002642C6 /* chsort.cpp */; };
+		30F8372918EB67170054875B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F8372818EB67170054875B /* Cocoa.framework */; };
+		30F8373318EB67170054875B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30F8373118EB67170054875B /* InfoPlist.strings */; };
+		30F8373B18EB67170054875B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F8372818EB67170054875B /* Cocoa.framework */; };
+		30F8373E18EB67170054875B /* slm_models.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F8372518EB67170054875B /* slm_models.framework */; };
+		30F8374418EB67170054875B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30F8374218EB67170054875B /* InfoPlist.strings */; };
+		30F8374718EB67170054875B /* slm_modelsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 30F8374618EB67170054875B /* slm_modelsTests.h */; };
+		30F8374918EB67170054875B /* slm_modelsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F8374818EB67170054875B /* slm_modelsTests.m */; };
+		30F8375418EB67A60054875B /* all-interval.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30F8375318EB67A60054875B /* all-interval.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		30F8373C18EB67170054875B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30F8371B18EB67170054875B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30F8372418EB67170054875B;
+			remoteInfo = slm_models;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3014753D18EC0A9100F0C804 /* hamming.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hamming.cpp; path = ../hamming/hamming.cpp; sourceTree = "<group>"; };
+		3014754618EC0AFD00F0C804 /* bpf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = bpf.cpp; path = ../vrythm/bpf.cpp; sourceTree = "<group>"; };
+		3014754718EC0AFD00F0C804 /* profils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = profils.cpp; path = ../profils/profils.cpp; sourceTree = "<group>"; };
+		3014755818EC0B2700F0C804 /* interpolm.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = interpolm.cpp; path = ../interpolm/interpolm.cpp; sourceTree = "<group>"; };
+		3014755918EC0B2700F0C804 /* interpolm.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = interpolm.h; path = ../interpolm/interpolm.h; sourceTree = "<group>"; };
+		3014756218EC0B8000F0C804 /* stroppa.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = stroppa.cpp; path = ../stroppa/stroppa.cpp; sourceTree = "<group>"; };
+		3014756318EC0B8000F0C804 /* stroppa.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = stroppa.h; path = ../stroppa/stroppa.h; sourceTree = "<group>"; };
+		3056C90B2641B89F00DDF2BE /* gecode.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gecode.framework; sourceTree = "<group>"; };
+		305C7CC418F1940F00AC0D11 /* libslm_models_staticlib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libslm_models_staticlib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		305C7CC818F1940F00AC0D11 /* slm_models_staticlib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slm_models_staticlib-Prefix.pch"; sourceTree = "<group>"; };
+		305C7CD818F1962200AC0D11 /* libgecodedriver.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodedriver.32.0.dylib; path = /usr/local/lib/libgecodedriver.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CDA18F1962200AC0D11 /* libgecodedriver.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodedriver.36.0.dylib; path = /usr/local/lib/libgecodedriver.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CDC18F1962200AC0D11 /* libgecodedriver.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodedriver.dylib; path = /usr/local/lib/libgecodedriver.dylib; sourceTree = "<absolute>"; };
+		305C7CDD18F1962200AC0D11 /* libgecodeflatzinc.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeflatzinc.36.0.dylib; path = /usr/local/lib/libgecodeflatzinc.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CDF18F1962200AC0D11 /* libgecodeflatzinc.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeflatzinc.dylib; path = /usr/local/lib/libgecodeflatzinc.dylib; sourceTree = "<absolute>"; };
+		305C7CE018F1962200AC0D11 /* libgecodefloat.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodefloat.36.0.dylib; path = /usr/local/lib/libgecodefloat.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CE218F1962200AC0D11 /* libgecodefloat.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodefloat.dylib; path = /usr/local/lib/libgecodefloat.dylib; sourceTree = "<absolute>"; };
+		305C7CE318F1962300AC0D11 /* libgecodeint.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeint.32.0.dylib; path = /usr/local/lib/libgecodeint.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CE518F1962300AC0D11 /* libgecodeint.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeint.36.0.dylib; path = /usr/local/lib/libgecodeint.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CE718F1962300AC0D11 /* libgecodeint.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeint.dylib; path = /usr/local/lib/libgecodeint.dylib; sourceTree = "<absolute>"; };
+		305C7CE818F1962300AC0D11 /* libgecodekernel.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodekernel.32.0.dylib; path = /usr/local/lib/libgecodekernel.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CEA18F1962300AC0D11 /* libgecodekernel.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodekernel.36.0.dylib; path = /usr/local/lib/libgecodekernel.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CEC18F1962300AC0D11 /* libgecodekernel.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodekernel.dylib; path = /usr/local/lib/libgecodekernel.dylib; sourceTree = "<absolute>"; };
+		305C7CED18F1962300AC0D11 /* libgecodeminimodel.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeminimodel.32.0.dylib; path = /usr/local/lib/libgecodeminimodel.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CEF18F1962300AC0D11 /* libgecodeminimodel.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeminimodel.36.0.dylib; path = /usr/local/lib/libgecodeminimodel.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CF118F1962300AC0D11 /* libgecodeminimodel.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeminimodel.dylib; path = /usr/local/lib/libgecodeminimodel.dylib; sourceTree = "<absolute>"; };
+		305C7CF218F1962300AC0D11 /* libgecodesearch.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesearch.32.0.dylib; path = /usr/local/lib/libgecodesearch.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CF418F1962300AC0D11 /* libgecodesearch.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesearch.36.0.dylib; path = /usr/local/lib/libgecodesearch.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CF618F1962300AC0D11 /* libgecodesearch.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesearch.dylib; path = /usr/local/lib/libgecodesearch.dylib; sourceTree = "<absolute>"; };
+		305C7CF718F1962300AC0D11 /* libgecodeset.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeset.32.0.dylib; path = /usr/local/lib/libgecodeset.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CF918F1962300AC0D11 /* libgecodeset.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeset.36.0.dylib; path = /usr/local/lib/libgecodeset.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7CFB18F1962300AC0D11 /* libgecodeset.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodeset.dylib; path = /usr/local/lib/libgecodeset.dylib; sourceTree = "<absolute>"; };
+		305C7CFC18F1962300AC0D11 /* libgecodesupport.32.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesupport.32.0.dylib; path = /usr/local/lib/libgecodesupport.32.0.dylib; sourceTree = "<absolute>"; };
+		305C7CFE18F1962300AC0D11 /* libgecodesupport.36.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesupport.36.0.dylib; path = /usr/local/lib/libgecodesupport.36.0.dylib; sourceTree = "<absolute>"; };
+		305C7D0018F1962300AC0D11 /* libgecodesupport.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgecodesupport.dylib; path = /usr/local/lib/libgecodesupport.dylib; sourceTree = "<absolute>"; };
+		307DECAD26433499001B3345 /* jarrell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jarrell.cpp; path = ../jarrell/jarrell.cpp; sourceTree = "<group>"; };
+		307DECAF264334C2001B3345 /* gechord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = gechord.h; path = ../gechord/gechord.h; sourceTree = "<group>"; };
+		307DECB1264334CA001B3345 /* gechord.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = gechord.cpp; path = ../gechord/gechord.cpp; sourceTree = "<group>"; };
+		30A83B422641EA90002642C6 /* chsort.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = chsort.cpp; path = ../chsort/chsort.cpp; sourceTree = SOURCE_ROOT; };
+		30F8372518EB67170054875B /* slm_models.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = slm_models.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F8372818EB67170054875B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		30F8372B18EB67170054875B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		30F8372C18EB67170054875B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		30F8372D18EB67170054875B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		30F8373018EB67170054875B /* slm_models-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "slm_models-Info.plist"; sourceTree = "<group>"; };
+		30F8373218EB67170054875B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30F8373418EB67170054875B /* slm_models-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slm_models-Prefix.pch"; sourceTree = "<group>"; };
+		30F8373A18EB67170054875B /* slm_modelsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = slm_modelsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30F8374118EB67170054875B /* slm_modelsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "slm_modelsTests-Info.plist"; sourceTree = "<group>"; };
+		30F8374318EB67170054875B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		30F8374518EB67170054875B /* slm_modelsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "slm_modelsTests-Prefix.pch"; sourceTree = "<group>"; };
+		30F8374618EB67170054875B /* slm_modelsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = slm_modelsTests.h; sourceTree = "<group>"; };
+		30F8374818EB67170054875B /* slm_modelsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = slm_modelsTests.m; sourceTree = "<group>"; };
+		30F8375318EB67A60054875B /* all-interval.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "all-interval.cpp"; path = "../all-interval/all-interval.cpp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		305C7CC118F1940F00AC0D11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				305C7CC518F1940F00AC0D11 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8372118EB67170054875B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F8372918EB67170054875B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8373618EB67170054875B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F8373B18EB67170054875B /* Cocoa.framework in Frameworks */,
+				30F8373E18EB67170054875B /* slm_models.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		305C7CC618F1940F00AC0D11 /* slm_models_staticlib */ = {
+			isa = PBXGroup;
+			children = (
+				305C7CD818F1962200AC0D11 /* libgecodedriver.32.0.dylib */,
+				305C7CDA18F1962200AC0D11 /* libgecodedriver.36.0.dylib */,
+				305C7CDC18F1962200AC0D11 /* libgecodedriver.dylib */,
+				305C7CDD18F1962200AC0D11 /* libgecodeflatzinc.36.0.dylib */,
+				305C7CDF18F1962200AC0D11 /* libgecodeflatzinc.dylib */,
+				305C7CE018F1962200AC0D11 /* libgecodefloat.36.0.dylib */,
+				305C7CE218F1962200AC0D11 /* libgecodefloat.dylib */,
+				305C7CE318F1962300AC0D11 /* libgecodeint.32.0.dylib */,
+				305C7CE518F1962300AC0D11 /* libgecodeint.36.0.dylib */,
+				305C7CE718F1962300AC0D11 /* libgecodeint.dylib */,
+				305C7CE818F1962300AC0D11 /* libgecodekernel.32.0.dylib */,
+				305C7CEA18F1962300AC0D11 /* libgecodekernel.36.0.dylib */,
+				305C7CEC18F1962300AC0D11 /* libgecodekernel.dylib */,
+				305C7CED18F1962300AC0D11 /* libgecodeminimodel.32.0.dylib */,
+				305C7CEF18F1962300AC0D11 /* libgecodeminimodel.36.0.dylib */,
+				305C7CF118F1962300AC0D11 /* libgecodeminimodel.dylib */,
+				305C7CF218F1962300AC0D11 /* libgecodesearch.32.0.dylib */,
+				305C7CF418F1962300AC0D11 /* libgecodesearch.36.0.dylib */,
+				305C7CF618F1962300AC0D11 /* libgecodesearch.dylib */,
+				305C7CF718F1962300AC0D11 /* libgecodeset.32.0.dylib */,
+				305C7CF918F1962300AC0D11 /* libgecodeset.36.0.dylib */,
+				305C7CFB18F1962300AC0D11 /* libgecodeset.dylib */,
+				305C7CFC18F1962300AC0D11 /* libgecodesupport.32.0.dylib */,
+				305C7CFE18F1962300AC0D11 /* libgecodesupport.36.0.dylib */,
+				305C7D0018F1962300AC0D11 /* libgecodesupport.dylib */,
+				305C7CC718F1940F00AC0D11 /* Supporting Files */,
+			);
+			path = slm_models_staticlib;
+			sourceTree = "<group>";
+		};
+		305C7CC718F1940F00AC0D11 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				305C7CC818F1940F00AC0D11 /* slm_models_staticlib-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30F8371918EB67170054875B = {
+			isa = PBXGroup;
+			children = (
+				30F8375218EB67820054875B /* Sources */,
+				30F8372E18EB67170054875B /* slm_models */,
+				30F8373F18EB67170054875B /* slm_modelsTests */,
+				305C7CC618F1940F00AC0D11 /* slm_models_staticlib */,
+				30F8372718EB67170054875B /* Frameworks */,
+				30F8372618EB67170054875B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30F8372618EB67170054875B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30F8372518EB67170054875B /* slm_models.framework */,
+				30F8373A18EB67170054875B /* slm_modelsTests.octest */,
+				305C7CC418F1940F00AC0D11 /* libslm_models_staticlib.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		30F8372718EB67170054875B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3056C90B2641B89F00DDF2BE /* gecode.framework */,
+				30F8372818EB67170054875B /* Cocoa.framework */,
+				30F8372A18EB67170054875B /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		30F8372A18EB67170054875B /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30F8372B18EB67170054875B /* AppKit.framework */,
+				30F8372C18EB67170054875B /* CoreData.framework */,
+				30F8372D18EB67170054875B /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		30F8372E18EB67170054875B /* slm_models */ = {
+			isa = PBXGroup;
+			children = (
+				30F8372F18EB67170054875B /* Supporting Files */,
+			);
+			path = slm_models;
+			sourceTree = "<group>";
+		};
+		30F8372F18EB67170054875B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				30F8373018EB67170054875B /* slm_models-Info.plist */,
+				30F8373118EB67170054875B /* InfoPlist.strings */,
+				30F8373418EB67170054875B /* slm_models-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30F8373F18EB67170054875B /* slm_modelsTests */ = {
+			isa = PBXGroup;
+			children = (
+				30F8374618EB67170054875B /* slm_modelsTests.h */,
+				30F8374818EB67170054875B /* slm_modelsTests.m */,
+				30F8374018EB67170054875B /* Supporting Files */,
+			);
+			path = slm_modelsTests;
+			sourceTree = "<group>";
+		};
+		30F8374018EB67170054875B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				30F8374118EB67170054875B /* slm_modelsTests-Info.plist */,
+				30F8374218EB67170054875B /* InfoPlist.strings */,
+				30F8374518EB67170054875B /* slm_modelsTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		30F8375218EB67820054875B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				30A83B422641EA90002642C6 /* chsort.cpp */,
+				307DECAD26433499001B3345 /* jarrell.cpp */,
+				3014756218EC0B8000F0C804 /* stroppa.cpp */,
+				3014756318EC0B8000F0C804 /* stroppa.h */,
+				3014755818EC0B2700F0C804 /* interpolm.cpp */,
+				3014755918EC0B2700F0C804 /* interpolm.h */,
+				3014754618EC0AFD00F0C804 /* bpf.cpp */,
+				3014754718EC0AFD00F0C804 /* profils.cpp */,
+				3014753D18EC0A9100F0C804 /* hamming.cpp */,
+				307DECAF264334C2001B3345 /* gechord.h */,
+				307DECB1264334CA001B3345 /* gechord.cpp */,
+				30F8375318EB67A60054875B /* all-interval.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		305C7CC218F1940F00AC0D11 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8372218EB67170054875B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3014755B18EC0B2700F0C804 /* interpolm.h in Headers */,
+				3014756618EC0B8000F0C804 /* stroppa.h in Headers */,
+				307DECB0264334C2001B3345 /* gechord.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		305C7CC318F1940F00AC0D11 /* slm_models_staticlib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 305C7CC918F1940F00AC0D11 /* Build configuration list for PBXNativeTarget "slm_models_staticlib" */;
+			buildPhases = (
+				305C7CC018F1940F00AC0D11 /* Sources */,
+				305C7CC118F1940F00AC0D11 /* Frameworks */,
+				305C7CC218F1940F00AC0D11 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = slm_models_staticlib;
+			productName = slm_models_staticlib;
+			productReference = 305C7CC418F1940F00AC0D11 /* libslm_models_staticlib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		30F8372418EB67170054875B /* slm_models */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F8374C18EB67170054875B /* Build configuration list for PBXNativeTarget "slm_models" */;
+			buildPhases = (
+				30F8372018EB67170054875B /* Sources */,
+				30F8372118EB67170054875B /* Frameworks */,
+				30F8372218EB67170054875B /* Headers */,
+				30F8372318EB67170054875B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = slm_models;
+			productName = slm_models;
+			productReference = 30F8372518EB67170054875B /* slm_models.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		30F8373918EB67170054875B /* slm_modelsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30F8374F18EB67170054875B /* Build configuration list for PBXNativeTarget "slm_modelsTests" */;
+			buildPhases = (
+				30F8373518EB67170054875B /* Sources */,
+				30F8373618EB67170054875B /* Frameworks */,
+				30F8373718EB67170054875B /* Resources */,
+				30F8373818EB67170054875B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30F8373D18EB67170054875B /* PBXTargetDependency */,
+			);
+			name = slm_modelsTests;
+			productName = slm_modelsTests;
+			productReference = 30F8373A18EB67170054875B /* slm_modelsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30F8371B18EB67170054875B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+			};
+			buildConfigurationList = 30F8371E18EB67170054875B /* Build configuration list for PBXProject "slm_models" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 30F8371918EB67170054875B;
+			productRefGroup = 30F8372618EB67170054875B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30F8372418EB67170054875B /* slm_models */,
+				30F8373918EB67170054875B /* slm_modelsTests */,
+				305C7CC318F1940F00AC0D11 /* slm_models_staticlib */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30F8372318EB67170054875B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F8373318EB67170054875B /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8373718EB67170054875B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F8374418EB67170054875B /* InfoPlist.strings in Resources */,
+				30F8374718EB67170054875B /* slm_modelsTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30F8373818EB67170054875B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		305C7CC018F1940F00AC0D11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				305C7CCE18F1959300AC0D11 /* stroppa.cpp in Sources */,
+				305C7CCF18F1959300AC0D11 /* stroppa.h in Sources */,
+				305C7CD018F1959300AC0D11 /* interpolm.cpp in Sources */,
+				305C7CD118F1959300AC0D11 /* interpolm.h in Sources */,
+				305C7CD218F1959300AC0D11 /* bpf.cpp in Sources */,
+				305C7CD318F1959300AC0D11 /* profils.cpp in Sources */,
+				305C7CD418F1959300AC0D11 /* hamming.cpp in Sources */,
+				305C7CD718F1959300AC0D11 /* all-interval.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8372018EB67170054875B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				307DECB2264334CA001B3345 /* gechord.cpp in Sources */,
+				30F8375418EB67A60054875B /* all-interval.cpp in Sources */,
+				3014753E18EC0A9100F0C804 /* hamming.cpp in Sources */,
+				3014754818EC0AFD00F0C804 /* bpf.cpp in Sources */,
+				30A83B432641EA90002642C6 /* chsort.cpp in Sources */,
+				3014754918EC0AFD00F0C804 /* profils.cpp in Sources */,
+				307DECAE26433499001B3345 /* jarrell.cpp in Sources */,
+				3014755A18EC0B2700F0C804 /* interpolm.cpp in Sources */,
+				3014756418EC0B8000F0C804 /* stroppa.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30F8373518EB67170054875B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				30F8374918EB67170054875B /* slm_modelsTests.m in Sources */,
+				3014756518EC0B8000F0C804 /* stroppa.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30F8373D18EB67170054875B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30F8372418EB67170054875B /* slm_models */;
+			targetProxy = 30F8373C18EB67170054875B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		30F8373118EB67170054875B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F8373218EB67170054875B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		30F8374218EB67170054875B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				30F8374318EB67170054875B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		305C7CCA18F1940F00AC0D11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_models_staticlib/slm_models_staticlib-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "/usr/local/**";
+				OTHER_LDFLAGS = (
+					"-Lgecodedriver",
+					"-Lgecodeminimodel",
+					"-Lgecodeset",
+					"-Lgecodeint",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+			};
+			name = Debug;
+		};
+		305C7CCB18F1940F00AC0D11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_models_staticlib/slm_models_staticlib-Prefix.pch";
+				LIBRARY_SEARCH_PATHS = "/usr/local/**";
+				OTHER_LDFLAGS = (
+					"-Lgecodedriver",
+					"-Lgecodeminimodel",
+					"-Lgecodeset",
+					"-Lgecodeint",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = static;
+			};
+			name = Release;
+		};
+		30F8374A18EB67170054875B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		30F8374B18EB67170054875B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LIBRARY = "compiler-default";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		30F8374D18EB67170054875B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_models/slm_models-Prefix.pch";
+				INFOPLIST_FILE = "slm_models/slm_models-Info.plist";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$(LOCAL_LIBRARY_DIR)/Frameworks/gecode.framework/Versions/Current\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-framework",
+					gecode,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		30F8374E18EB67170054875B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = /;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_models/slm_models-Prefix.pch";
+				INFOPLIST_FILE = "slm_models/slm_models-Info.plist";
+				"LIBRARY_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"\"$(LOCAL_LIBRARY_DIR)/Frameworks/gecode.framework/Versions/Current\"",
+				);
+				"OTHER_LDFLAGS[arch=*]" = (
+					"-framework",
+					gecode,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		30F8375018EB67170054875B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_modelsTests/slm_modelsTests-Prefix.pch";
+				INFOPLIST_FILE = "slm_modelsTests/slm_modelsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		30F8375118EB67170054875B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "slm_modelsTests/slm_modelsTests-Prefix.pch";
+				INFOPLIST_FILE = "slm_modelsTests/slm_modelsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		305C7CC918F1940F00AC0D11 /* Build configuration list for PBXNativeTarget "slm_models_staticlib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				305C7CCA18F1940F00AC0D11 /* Debug */,
+				305C7CCB18F1940F00AC0D11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F8371E18EB67170054875B /* Build configuration list for PBXProject "slm_models" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F8374A18EB67170054875B /* Debug */,
+				30F8374B18EB67170054875B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F8374C18EB67170054875B /* Build configuration list for PBXNativeTarget "slm_models" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F8374D18EB67170054875B /* Debug */,
+				30F8374E18EB67170054875B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30F8374F18EB67170054875B /* Build configuration list for PBXNativeTarget "slm_modelsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30F8375018EB67170054875B /* Debug */,
+				30F8375118EB67170054875B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30F8371B18EB67170054875B /* Project object */;
+}

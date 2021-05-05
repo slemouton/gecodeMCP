@@ -353,8 +353,11 @@ public:
 /** \brief Main-function
  *  \relates Hamming
  */
-int
-main(int argc, char* argv[]) {
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_stroppa (int argc, char* argv[]){
+#endif
   StroppaOptions opt("Stroppa",5);
   opt.parse(argc,argv);
 	

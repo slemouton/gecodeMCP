@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'slm_modelsTests' target in the 'slm_modelsTests' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

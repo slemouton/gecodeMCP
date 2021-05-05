@@ -304,8 +304,12 @@ public:
 /** \brief Main-function
  *  \relates MagicSquare
  */
-int
-main(int argc, char* argv[]) {
+#if SCRIPT
+int main(int argc, char* argv[]){
+#else
+int main_interpolm (int argc, char* argv[]){
+#endif
+
 	interpolMOptions opt("InterpolM","(1 2 3)",3,3);
 	opt.iterations(1);
 

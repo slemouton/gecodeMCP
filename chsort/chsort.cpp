@@ -602,7 +602,11 @@ public:
 /** \brief Main-function
  *  \relates AllInterval
  */
+#if SCRIPT
 int main(int argc, char* argv[]){
+#else
+int main_chsort (int argc, char* argv[]){
+#endif
 	ChsortOptions opt("ChSort","((60 61)(61 62))",20,4);
 	opt.size(1000);
 	opt.iterations(5);
