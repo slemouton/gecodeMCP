@@ -218,7 +218,7 @@ public:
  *  \relates Profils
  */
 #if SCRIPT
-int main(int argc, char* argv[]){
+int main_script(int argc, char* argv[]){
 #else
 int main_profils(int argc, char* argv[]){
 #endif
@@ -292,7 +292,7 @@ extern "C" {
 };
 
 
-int main_test(int argc, char* argv[]){
+int main(int argc, char* argv[]){
 	char r[10000];
 	profilsG(7,  "((0 1 1 0 2 1) (0 0 1 1 2 0))",20,2,5,1,0,r);
 	

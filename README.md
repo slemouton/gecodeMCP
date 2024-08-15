@@ -5,16 +5,26 @@ In this repository, you will find all the code described in the chapter 5 ("_Usi
 ## installation
 	'make all'
 ## library
-(not yet)
+- compile slm-models framework
+    - in xcode : 
+    - build target slm_models (debug)
 ## max object
+- compile mgeco max object
+   - in xcode :
+   - build target mgeco-nobach (debug)
+## max package
 (not yet)
 ## bach object
 (not yet)
 
-## news
-update the gecodeMCP folder to make it run under gecode6.1
+## still to do
+chord sorting : timelimit + simpletest crash
+interpolm : script does not parse arguments
 
-all-interval ok	
+
+## news
+
+## note : porting to gecode 6.1
 
 icl->ipl
 
@@ -33,5 +43,3 @@ Removed the deprecated classes MinimizeScript and MaximizeScript (use IntMinimiz
 IntArgs now support standard initializer lists but do not any longer support variable argument lists (as the combination is really confusing). Now one can write IntArgs c({1,2,3}) for example. (major)
 	update Makefile
 	deployment on gitlab
-## still to do
-chord sorting : timelimit + simpletest crash

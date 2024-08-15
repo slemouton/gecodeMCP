@@ -310,7 +310,7 @@ int main(int argc, char* argv[]){
 int main_interpolm (int argc, char* argv[]){
 #endif
 
-	interpolMOptions opt("InterpolM","(1 2 3)",3,3);
+	interpolMOptions opt("InterpolM","(1 2 3 4)",3,3);
 	opt.iterations(1);
 
 	
